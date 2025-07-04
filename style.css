@@ -1,0 +1,78 @@
+/* ...existing code... */
+
+/* Ajuste visual para la SPA de navegación principal */
+body {
+    background: #f8fafc;
+    color: #222;
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+}
+
+header {
+    background: #fff;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.04);
+    padding: 2rem 0 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    color: #2d3748;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1rem 0 0 0;
+    flex-wrap: wrap;
+}
+
+.tab {
+    background: #f1f5f9;
+    color: #2563eb;
+    border: none;
+    border-radius: 6px;
+    padding: 0.7rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.03);
+    cursor: pointer;
+}
+
+.tab:hover, .tab:focus {
+    background: #2563eb;
+    color: #fff;
+    outline: none;
+}
+
+.info-msg {
+    margin: 3rem auto 0 auto;
+    max-width: 420px;
+    background: #e0e7ef;
+    border-radius: 8px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    color: #334155;
+    font-size: 1.15rem;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.03);
+}
+
+@media (max-width: 600px) {
+    .tabs {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    header {
+        padding: 1.2rem 0 0.5rem 0;
+    }
+    .info-msg {
+        padding: 1.2rem 0.7rem;
+        font-size: 1rem;
+    }
+}

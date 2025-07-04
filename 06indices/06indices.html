@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Algoritmos - Ciencias de la Computación II</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">Simulador de Algoritmos</h1>
+            <nav class="header__nav">
+                <button class="tab-btn active" data-tab="busquedas-internas">Búsquedas Internas</button>
+                <button class="tab-btn" data-tab="arboles">Árboles</button>
+                <button class="tab-btn" data-tab="busquedas-externas">Búsquedas Externas</button>
+                <button class="tab-btn" data-tab="estructuras-dinamicas">Estructuras Dinámicas</button>
+                <button class="tab-btn" data-tab="indices">Índices</button>
+            </nav>
+            <button class="theme-toggle" id="theme-toggle">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- Búsquedas Internas Tab -->
+            <div class="tab-content active" id="busquedas-internas">
+                <div class="section">
+                    <h2>Algoritmos de Búsqueda</h2>
+                    <div class="algorithm-grid">
+                        <button class="algorithm-btn" data-algorithm="busqueda-lineal">
+                            <h3>Búsqueda Lineal</h3>
+                            <p>Recorrido secuencial del arreglo</p>
+                        </button>
+                        <button class="algorithm-btn" data-algorithm="busqueda-binaria">
+                            <h3>Búsqueda Binaria</h3>
+                            <p>Búsqueda en arreglo ordenado</p>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Funciones Hash</h2>
+                    <div class="algorithm-grid">
+                        <button class="algorithm-btn" data-algorithm="hash-mod">
+                            <h3>Hash Mod</h3>
+                            <p>Función hash por módulo</p>
+                        </button>
+                        <button class="algorithm-btn" data-algorithm="hash-cuadrado">
+                            <h3>Hash Cuadrado</h3>
+                            <p>Método mid-square</p>
+                        </button>
+                        <button class="algorithm-btn" data-algorithm="hash-plegamiento">
+                            <h3>Hash Plegamiento</h3>
+                            <p>Suma de grupos de dígitos</p>
+                        </button>
+                        <button class="algorithm-btn" data-algorithm="hash-truncamiento">
+                            <h3>Hash Truncamiento</h3>
+                            <p>Extracción de posiciones específicas</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Árboles Tab -->
+            <div class="tab-content" id="arboles">
+                <div class="section">
+                    <h2>Algoritmos de Árboles</h2>
+                    <div class="algorithm-grid">
+                        <button class="algorithm-btn" data-algorithm="arboles-digitales">
+                            <h3>Árboles Digitales</h3>
+                            <p>Construcción basada en bits ASCII</p>
+                        </button>
+                        <button class="algorithm-btn" data-algorithm="arboles-residuos-particular">
+                            <h3>Árboles por Residuos Particular</h3>
+                            <p>Construcción por residuos específicos</p>
+                        </button>
+                        <button class="algorithm-btn" data-algorithm="arboles-residuos-multiples">
+                            <h3>Árboles por Residuos Múltiples</h3>
+                            <p>M bits por rama, 2^M enlaces</p>
+                        </button>
+                        <button class="algorithm-btn featured" data-algorithm="arboles-huffman">
+                            <h3>Árboles de Huffman</h3>
+                            <p>Codificación por frecuencias</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Búsquedas Externas Tab -->
+            <div class="tab-content" id="busquedas-externas">
+                <div class="section">
+                    <h2>Búsquedas Externas</h2>
+                    <div class="algorithm-grid">
+                        <button class="algorithm-btn" data-algorithm="ext-lineal">
+                            <h3>Búsqueda Lineal por Bloques</h3>
+                            <p>Recorrido secuencial bloque a bloque</p>
+                        </button>
+                        <button class="algorithm-btn" data-algorithm="ext-binaria">
+                            <h3>Búsqueda Binaria por Bloques</h3>
+                            <p>Búsqueda dicotómica por bloques</p>
+                        </button>
+                    </div>
+
+                    <h2 class="mt-8">Funciones Hash por Bloques</h2>
+                    <div class="algorithm-grid">
+                        <button class="algorithm-btn" data-algorithm="ext-hash-mod">
+                            <h3>Hash Mod por Bloques</h3>
+                            <p>Función módulo asignada a bloques</p>
+                        </button>
+                        <button class="algorithm-btn" data-algorithm="ext-hash-cuadrado">
+                            <h3>Hash Cuadrado por Bloques</h3>
+                            <p>Método mid-square adaptado</p>
+                        </button>
+                        <button class="algorithm-btn" data-algorithm="ext-hash-plegamiento">
+                            <h3>Hash Plegamiento por Bloques</h3>
+                            <p>Plegamiento de dígitos a bloques</p>
+                        </button>
+                        <button class="algorithm-btn" data-algorithm="ext-hash-truncamiento">
+                            <h3>Hash Truncamiento por Bloques</h3>
+                            <p>Truncamiento de dígitos a bloques</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Estructuras Dinámicas Tab -->
+            <div class="tab-content" id="estructuras-dinamicas">
+                <div class="section">
+                    <h2>Estructuras Dinámicas</h2>
+                    <p class="coming-soon">Próximamente disponible...</p>
+                </div>
+            </div>
+
+            <!-- Índices Tab -->
+            <div class="tab-content" id="indices">
+                <div class="section">
+                    <h2>Métodos de Índices</h2>
+                    <div class="algorithm-grid">
+                        <button class="algorithm-btn featured" data-algorithm="indice-primario">
+                            <h3>Índice Primario</h3>
+                            <p>Un registro de índice por cada bloque de datos</p>
+                        </button>
+                        <button class="algorithm-btn featured" data-algorithm="indice-secundario">
+                            <h3>Índice Secundario</h3>
+                            <p>Un registro de índice por cada registro de datos</p>
+                        </button>
+                        <button class="algorithm-btn featured" data-algorithm="multinivel-primario">
+                            <h3>Multinivel Primario</h3>
+                            <p>Múltiples niveles basados en índices primarios</p>
+                        </button>
+                        <button class="algorithm-btn featured" data-algorithm="multinivel-secundario">
+                            <h3>Multinivel Secundario</h3>
+                            <p>Múltiples niveles basados en índices secundarios</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal para Árboles de Huffman -->
+    <div class="modal" id="modal-arboles-huffman">
+        <div class="modal__content">
+            <div class="modal__header">
+                <h2>Árboles de Huffman</h2>
+                <button class="modal__close">&times;</button>
+            </div>
+            <div class="modal__body">
+                <div class="huffman-container">
+                    <div class="huffman-config">
+                        <h3>Configuración</h3>
+                        <div class="form-group">
+                            <label class="form-label">Mensaje completo:</label>
+                            <input type="text" class="form-control" id="huffman-message" placeholder="Ej: JULIO">
+                        </div>
+                        <button class="btn btn--primary" id="huffman-build">Construir Árbol</button>
+                    </div>
+
+                    <div class="huffman-controls">
+                        <h3>Controles</h3>
+                        <div class="form-group">
+                            <label class="form-label">Clave individual:</label>
+                            <input type="text" class="form-control" id="huffman-key" placeholder="Ej: A" maxlength="1">
+                        </div>
+                        <div class="control-buttons">
+                            <button class="btn btn--secondary" id="huffman-insert">Insertar</button>
+                            <button class="btn btn--outline" id="huffman-search">Buscar</button>
+                            <button class="btn btn--outline" id="huffman-delete">Eliminar</button>
+                            <button class="btn btn--outline" id="huffman-reset">Resetear</button>
+                        </div>
+                    </div>
+
+                    <div class="huffman-visualization">
+                        <h3>Visualización</h3>
+                        <div class="canvas-container">
+                            <svg id="huffman-canvas" class="tree-canvas"></svg>
+                            <div class="canvas-controls">
+                                <span>Zoom: <span id="zoom-level">1.0x</span></span>
+                                <button class="btn btn--sm" id="zoom-reset">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="huffman-terminal">
+                        <h3>Terminal de Resultados</h3>
+                        <div class="terminal" id="huffman-terminal"></div>
+                    </div>
+
+                    <div class="huffman-io">
+                        <h3>Importación/Exportación</h3>
+                        <div class="io-buttons">
+                            <button class="btn btn--outline" id="huffman-export">Exportar CSV</button>
+                            <input type="file" id="huffman-import" accept=".csv" style="display: none;">
+                            <button class="btn btn--outline" id="huffman-import-btn">Importar CSV</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Búsquedas Externas -->
+    <div class="modal" id="modal-externas">
+        <div class="modal__content">
+            <div class="modal__header">
+                <h2 id="externas-modal-title">Búsquedas Externas</h2>
+                <button class="modal__close">&times;</button>
+            </div>
+            <div class="modal__body">
+                <div class="externas-container">
+                    <div class="externas-config" id="externas-config">
+                        <!-- Configuración se inyecta vía JS -->
+                    </div>
+                    <div class="externas-controls" id="externas-controls">
+                        <!-- Controles se inyectan vía JS -->
+                    </div>
+                    <div class="externas-visualization" id="externas-visualization">
+                        <h3>Visualización</h3>
+                        <div id="externas-display" class="block-area"></div>
+                    </div>
+                    <div class="externas-terminal" id="externas-terminal-wrapper">
+                        <h3>Terminal</h3>
+                        <div class="terminal" id="externas-terminal"></div>
+                    </div>
+                    <div class="externas-io" id="externas-io">
+                        <h3>Importación/Exportación</h3>
+                        <div class="io-buttons">
+                            <button class="btn btn--outline" id="externas-export">Exportar JSON</button>
+                            <input type="file" id="externas-import" accept=".json" style="display: none;">
+                            <button class="btn btn--outline" id="externas-import-btn">Importar JSON</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Índices -->
+    <div class="modal" id="modal-indices">
+        <div class="modal__content">
+            <div class="modal__header">
+                <h2 id="indices-modal-title">Índices</h2>
+                <button class="modal__close">&times;</button>
+            </div>
+            <div class="modal__body">
+                <div class="indices-container">
+                    <div class="indices-config">
+                        <h3>Configuración</h3>
+                        <div class="form-group">
+                            <label class="form-label">Número de registros:</label>
+                            <input type="number" class="form-control" id="indices-registros" min="1" value="500000">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Longitud del registro (bytes):</label>
+                            <input type="number" class="form-control" id="indices-longitud-registro" min="1" value="120">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Tamaño entrada índice (bytes):</label>
+                            <input type="number" class="form-control" id="indices-entrada-indice" min="1" value="15">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Tamaño de bloque (bytes):</label>
+                            <input type="number" class="form-control" id="indices-tamaño-bloque" min="1" value="4096">
+                        </div>
+                        <button class="btn btn--primary" id="indices-calcular">Calcular Estructura</button>
+                    </div>
+
+                    <div class="indices-simulacion">
+                        <h3>Simulación Interactiva</h3>
+                        <div class="form-group">
+                            <label class="form-label">Número de registro a buscar:</label>
+                            <input type="number" class="form-control" id="indices-buscar-registro" min="1" placeholder="Ej: 250000">
+                        </div>
+                        <div class="control-buttons">
+                            <button class="btn btn--secondary" id="indices-simular">Simular Búsqueda</button>
+                            <button class="btn btn--outline" id="indices-reset">Resetear</button>
+                        </div>
+                        <div class="contador-accesos">
+                            <strong>Accesos: <span id="indices-contador-accesos">0</span></strong>
+                        </div>
+                    </div>
+
+                    <div class="indices-visualization">
+                        <h3>Visualización de Estructura</h3>
+                        <div id="indices-display" class="indices-area"></div>
+                    </div>
+
+                    <div class="indices-calculos">
+                        <h3>Cálculos Paso a Paso</h3>
+                        <div id="indices-calculos-display" class="calculos-area"></div>
+                    </div>
+
+                    <div class="indices-terminal-wrapper">
+                        <h3>Terminal</h3>
+                        <div class="terminal" id="indices-terminal"></div>
+                    </div>
+
+                    <div class="indices-io">
+                        <h3>Importación/Exportación</h3>
+                        <div class="io-buttons">
+                            <button class="btn btn--outline" id="indices-export">Exportar JSON</button>
+                            <input type="file" id="indices-import" accept=".json" style="display: none;">
+                            <button class="btn btn--outline" id="indices-import-btn">Importar JSON</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal genérico (otros algoritmos internos) -->
+    <div class="modal" id="modal-generic">
+        <div class="modal__content">
+            <div class="modal__header">
+                <h2 id="modal-title">Algoritmo</h2>
+                <button class="modal__close">&times;</button>
+            </div>
+            <div class="modal__body">
+                <div class="algorithm-container">
+                    <div class="algorithm-config">
+                        <h3>Configuración</h3>
+                        <div id="algorithm-inputs"></div>
+                    </div>
+                    <div class="algorithm-visualization">
+                        <h3>Visualización</h3>
+                        <div id="algorithm-display"></div>
+                    </div>
+                    <div class="algorithm-terminal">
+                        <h3>Terminal</h3>
+                        <div class="terminal" id="algorithm-terminal"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

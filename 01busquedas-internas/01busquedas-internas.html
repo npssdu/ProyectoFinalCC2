@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmos de Ciencias de la Computación II</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="flex items-center justify-between px-16 py-8">
+        <h1 class="m-0">Algoritmos de Ciencias de la Computación II</h1>
+        <div class="theme-selector">
+            <button id="theme-toggle" class="btn btn--outline btn--sm">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="nav-tabs">
+        <button class="nav-tab active" data-tab="busquedas-internas">Búsquedas Internas</button>
+        <button class="nav-tab" data-tab="arboles">Árboles</button>
+        <button class="nav-tab" data-tab="busquedas-externas">Búsquedas Externas</button>
+        <button class="nav-tab" data-tab="estructuras-dinamicas">Estructuras Dinámicas</button>
+        <button class="nav-tab" data-tab="indices">Índices</button>
+    </nav>
+
+    <main class="container py-16">
+        <div id="busquedas-internas" class="tab-content active">
+            <div class="content-grid">
+                <section class="content-section">
+                    <h2>Algoritmos de Búsqueda</h2>
+                    <div class="algorithm-grid">
+                        <div class="algorithm-card card" data-algorithm="linear-search">
+                            <div class="card__body">
+                                <h3>Búsqueda Lineal</h3>
+                                <p class="complexity">O(n)</p>
+                                <p>Búsqueda secuencial elemento por elemento</p>
+                                <button class="btn btn--primary btn--sm">Abrir</button>
+                            </div>
+                        </div>
+                        <div class="algorithm-card card" data-algorithm="binary-search">
+                            <div class="card__body">
+                                <h3>Búsqueda Binaria</h3>
+                                <p class="complexity">O(log n)</p>
+                                <p>Búsqueda por división del espacio</p>
+                                <button class="btn btn--primary btn--sm">Abrir</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>Funciones Hash</h2>
+                    <div class="algorithm-grid">
+                        <div class="algorithm-card card" data-algorithm="hash-mod">
+                            <div class="card__body">
+                                <h3>Hash Mod</h3>
+                                <p class="complexity">h(clave) = (clave % tamaño) + 1</p>
+                                <p>Función hash con métodos de resolución de colisiones</p>
+                                <button class="btn btn--primary btn--sm">Abrir</button>
+                            </div>
+                        </div>
+                        <div class="algorithm-card card" data-algorithm="hash-square">
+                            <div class="card__body">
+                                <h3>Hash Cuadrado</h3>
+                                <p class="complexity">h(clave) = (clave² % tamaño) + 1</p>
+                                <p>Función hash del cuadrado medio con resolución de colisiones</p>
+                                <button class="btn btn--primary btn--sm">Abrir</button>
+                            </div>
+                        </div>
+                        <div class="algorithm-card card" data-algorithm="hash-folding">
+                            <div class="card__body">
+                                <h3>Hash Plegamiento</h3>
+                                <p class="complexity">h(clave) = (Σ(grupos) % tamaño) + 1</p>
+                                <p>Función hash por suma de grupos de dígitos</p>
+                                <button class="btn btn--primary btn--sm">Abrir</button>
+                            </div>
+                        </div>
+                        <div class="algorithm-card card" data-algorithm="hash-truncation">
+                            <div class="card__body">
+                                <h3>Hash Truncamiento</h3>
+                                <p class="complexity">h(clave) = (posiciones % tamaño) + 1</p>
+                                <p>Función hash por extracción de posiciones específicas</p>
+                                <button class="btn btn--primary btn--sm">Abrir</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div id="arboles" class="tab-content">
+            <div class="placeholder-content">
+                <h2>Árboles</h2>
+                <p>Contenido en desarrollo...</p>
+            </div>
+        </div>
+
+        <div id="busquedas-externas" class="tab-content">
+            <div class="placeholder-content">
+                <h2>Búsquedas Externas</h2>
+                <p>Contenido en desarrollo...</p>
+            </div>
+        </div>
+
+        <div id="estructuras-dinamicas" class="tab-content">
+            <div class="placeholder-content">
+                <h2>Estructuras Dinámicas</h2>
+                <p>Contenido en desarrollo...</p>
+            </div>
+        </div>
+
+        <div id="indices" class="tab-content">
+            <div class="placeholder-content">
+                <h2>Índices</h2>
+                <p>Contenido en desarrollo...</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal Template -->
+    <div id="algorithm-modal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Cerrar modal">×</button>
+            <div class="modal-header">
+                <h2 id="modal-title">Algoritmo</h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-sections">
+                    <div class="modal-section" id="configuration-section">
+                        <h3>Configuración</h3>
+                        <div class="form-group">
+                            <label class="form-label">Tamaño de la estructura</label>
+                            <input type="number" id="structure-size" class="form-control" min="1" value="10">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Longitud de la clave</label>
+                            <input type="number" id="key-length" class="form-control" min="1" value="3">
+                        </div>
+                        <div class="form-group" id="collision-method-group" style="display: none;">
+                            <label class="form-label">Método de colisión</label>
+                            <select id="collision-method" class="form-control">
+                                <option value="linear">Sondeo Lineal</option>
+                                <option value="quadratic">Sondeo Cuadrático</option>
+                                <option value="nested">Estructuras Anidadas</option>
+                                <option value="linked">Estructuras Enlazadas</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="folding-digits-group" style="display: none;">
+                            <label class="form-label">Cifras menos significativas por grupo</label>
+                            <input type="number" id="folding-digits" class="form-control" min="1" value="3">
+                        </div>
+                        <div class="form-group" id="truncation-positions-group" style="display: none;">
+                            <label class="form-label">Posiciones de dígitos (separadas por comas)</label>
+                            <input type="text" id="truncation-positions" class="form-control" placeholder="1,4,7" value="1,4,7">
+                        </div>
+                        <button id="initialize-structure" class="btn btn--primary">Inicializar Estructura</button>
+                    </div>
+
+                    <div class="modal-section" id="controls-section">
+                        <h3>Controles</h3>
+                        <div class="form-group">
+                            <label class="form-label">Clave</label>
+                            <input type="text" id="key-input" class="form-control" placeholder="Ingrese clave">
+                        </div>
+                        <div class="controls-buttons">
+                            <button id="insert-btn" class="btn btn--success btn--sm">Insertar</button>
+                            <button id="delete-btn" class="btn btn--error btn--sm">Eliminar</button>
+                            <button id="search-btn" class="btn btn--primary btn--sm">Buscar</button>
+                            <button id="sort-btn" class="btn btn--warning btn--sm">Ordenar</button>
+                            <button id="reset-btn" class="btn btn--secondary btn--sm">Resetear</button>
+                        </div>
+                        <div class="test-buttons" id="test-buttons-group" style="display: none;">
+                            <button id="test-folding-btn" class="btn btn--info btn--sm">Probar Hash Plegamiento</button>
+                            <button id="test-truncation-btn" class="btn btn--info btn--sm">Probar Hash Truncamiento</button>
+                        </div>
+                    </div>
+
+                    <div class="modal-section" id="visualization-section">
+                        <h3>Visualización</h3>
+                        <div id="structure-display" class="structure-display"></div>
+                    </div>
+
+                    <div class="modal-section" id="results-section">
+                        <h3>Terminal de Resultados</h3>
+                        <div id="results-terminal" class="terminal"></div>
+                    </div>
+
+                    <div class="modal-section" id="import-export-section">
+                        <h3>Importar/Exportar</h3>
+                        <div class="import-export-controls">
+                            <button id="export-btn" class="btn btn--secondary btn--sm">Exportar CSV</button>
+                            <input type="file" id="import-file" accept=".csv" style="display: none;">
+                            <button id="import-btn" class="btn btn--secondary btn--sm">Importar CSV</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
