@@ -277,10 +277,9 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 
 ¿Tienes preguntas o necesitas ayuda?
 
-- 📧 **Email**: soporte@simulador-cc2.edu
-- 📖 **Documentación**: Ver Manual de Usuario y Manual Técnico
-- 🐛 **Issues**: Reportar problemas en GitHub Issues
-- 💬 **Discusiones**: Únete a GitHub Discussions
+- ndpossos@udistrital.edu.co
+- jhdavidd@udistrital.edu.co
+- apinedaq@udistrital.edu.co
 
 ---
 
